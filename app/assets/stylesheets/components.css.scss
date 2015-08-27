@@ -1,0 +1,10 @@
+// Place all the styles related to the Components controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+table, th, td {
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+	border-collapse: collapse;
+}

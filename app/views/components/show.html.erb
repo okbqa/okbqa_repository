@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<table>
+<tr>
+  <th>Title:</th>
+  <td><%= @component.title %></td>
+</tr>
+
+<tr>
+  <th>Category:</th>
+  <td><%= @component.category %></td>
+</tr>
+
+<tr>
+  <th>Description:</th>
+  <td><%= @component.description %></td>
+</tr>
+
+<tr>
+  <th>Sample input:</th>
+  <td><pre><%= @component.sample_input %></pre></td>
+</tr>
+
+<tr>
+  <th>Sample output:</th>
+  <td><pre><%= @component.sample_output %></pre></td>
+</tr>
+
+<tr>
+  <th>Sample cURL command:</th>
+  <td><%= @component.sample_curl_command %></td>
+</tr>
+
+<tr>
+  <th>Web service URL:</th>
+  <td><%= @component.ws_url %></td>
+</tr>
+
+<tr>
+  <th>Source-code URL:</th>
+  <td><%= @component.sc_url %></td>
+</tr>
+
+<tr>
+  <th>Homepage URL:</th>
+  <td><a href="<%= @component.home_url %>"><%= @component.home_url %></a></td>
+</tr>
+</table>
+
+<%= link_to 'Edit', edit_component_path(@component) %> |
+<%= link_to 'Back', components_path %>

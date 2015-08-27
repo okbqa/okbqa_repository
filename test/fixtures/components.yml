@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  category: MyString
+  description: MyText
+  sample_input: MyText
+  sample_output: MyText
+  sample_curl_command: MyString
+  ws_url: MyString
+  sc_url: MyString
+  home_url: MyString
+
+two:
+  title: MyString
+  category: MyString
+  description: MyText
+  sample_input: MyText
+  sample_output: MyText
+  sample_curl_command: MyString
+  ws_url: MyString
+  sc_url: MyString
+  home_url: MyString

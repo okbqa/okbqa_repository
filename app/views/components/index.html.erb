@@ -1,0 +1,27 @@
+<h1>OKBQA modules</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Category</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @components.each do |component| %>
+  <tr>
+    <td><%= component.title %></td>
+    <td><%= component.category %></td>
+    <td><%= component.description %></td>
+    <td><%= link_to 'Show', component %></td>
+    <td><%= link_to 'Edit', edit_component_path(component) %></td>
+    <td><%= link_to 'Destroy', component, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Component', new_component_path %>
