@@ -43,6 +43,7 @@ class ComponentsController < ApplicationController
   # POST /components.json
   def create
     @component = Component.new(params[:component])
+    @component.user = current_user
 
     respond_to do |format|
       if @component.save
@@ -81,5 +82,10 @@ class ComponentsController < ApplicationController
       format.html { redirect_to components_url }
       format.json { head :no_content }
     end
+  end
+
+  def test
+    @component = Component.find(params[:id])
+    result = @component.test    
   end
 end

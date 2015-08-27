@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-OkbqaRepository::Application.config.secret_token = '7ed476a2d42dfc148d98d27baa948a3b03381b690e6a1acf6407bb38d1c19f2e65d82650f580a35ccb5e695db82fbefc83ab01a0203153df41b12f22884175e9'
+OkbqaRepository::Application.config.secret_token = '65bc43d8f9283e48be985f285bb2322dc5bcf11a547eab98019fbee1a4038ebcab66c6622054d390c304ac95ac0431d7aaa37ee8f31b8e251230ac091ecd343d'

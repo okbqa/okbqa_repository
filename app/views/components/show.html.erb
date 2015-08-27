@@ -1,11 +1,13 @@
+<h2><%= @component.title %></h2>
+
 <p id="notice"><%= notice %></p>
 
-<table>
-<tr>
-  <th>Title:</th>
-  <td><%= @component.title %></td>
-</tr>
 
+<%= link_to 'Edit', edit_component_path(@component) %> |
+<%= link_to 'List', components_path %>
+
+
+<table>
 <tr>
   <th>Category:</th>
   <td><%= @component.category %></td>
@@ -13,22 +15,7 @@
 
 <tr>
   <th>Description:</th>
-  <td><%= @component.description %></td>
-</tr>
-
-<tr>
-  <th>Sample input:</th>
-  <td><pre><%= @component.sample_input %></pre></td>
-</tr>
-
-<tr>
-  <th>Sample output:</th>
-  <td><pre><%= @component.sample_output %></pre></td>
-</tr>
-
-<tr>
-  <th>Sample cURL command:</th>
-  <td><%= @component.sample_curl_command %></td>
+  <td><%= @component.description.html_safe %></td>
 </tr>
 
 <tr>
@@ -38,14 +25,27 @@
 
 <tr>
   <th>Source-code URL:</th>
-  <td><%= @component.sc_url %></td>
+  <td><a href="<%= @component.sc_url %>"><%= @component.sc_url %></a></td>
 </tr>
 
 <tr>
   <th>Homepage URL:</th>
   <td><a href="<%= @component.home_url %>"><%= @component.home_url %></a></td>
 </tr>
-</table>
 
-<%= link_to 'Edit', edit_component_path(@component) %> |
-<%= link_to 'Back', components_path %>
+<tr>
+  <th>Sample input:</th>
+  <td><pre class="sample"><%= @component.sample_input %></pre></td>
+</tr>
+
+<tr>
+  <th>Sample output:</th>
+  <td><pre class="sample"><%= @component.sample_output %></pre></td>
+</tr>
+
+<tr>
+  <th>Sample cURL command:</th>
+  <td><%= @component.sample_curl_command %></td>
+</tr>
+
+</table>

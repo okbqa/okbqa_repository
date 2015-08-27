@@ -1,23 +1,25 @@
-<h1>OKBQA modules</h1>
+<h2>List</h2>
 
 <table>
   <tr>
-    <th>Title</th>
-    <th>Category</th>
+    <th style="width:10em">Title</th>
+    <th style="width:10em">Category</th>
     <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th style="width:15em">Maintainer</th>
   </tr>
 
 <% @components.each do |component| %>
   <tr>
-    <td><%= component.title %></td>
+    <td><%= link_to component.title, component %></td>
     <td><%= component.category %></td>
-    <td><%= component.description %></td>
-    <td><%= link_to 'Show', component %></td>
-    <td><%= link_to 'Edit', edit_component_path(component) %></td>
-    <td><%= link_to 'Destroy', component, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= component.description.html_safe %></td>
+    <td><%= component.user.email %></td>
+    <% if user_signed_in? && component.editable?(current_user) -%>
+      <td>
+          <span class='button'><%= link_to 'Edit', edit_component_path(component) %></span>
+          <span class='button'><%= link_to 'Destroy', component, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+      </td>
+    <% end %>
   </tr>
 <% end %>
 </table>

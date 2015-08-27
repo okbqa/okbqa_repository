@@ -10,8 +10,10 @@ class CreateComponents < ActiveRecord::Migration
       t.string :ws_url
       t.string :sc_url
       t.string :home_url
+      t.references :user
 
       t.timestamps
     end
+    add_index :components, :user_id
   end
 end

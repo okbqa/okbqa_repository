@@ -10,6 +10,7 @@ one:
   ws_url: MyString
   sc_url: MyString
   home_url: MyString
+  user: 
 
 two:
   title: MyString
@@ -21,3 +22,4 @@ two:
   ws_url: MyString
   sc_url: MyString
   home_url: MyString
+  user: 

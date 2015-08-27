@@ -8,3 +8,16 @@ table, th, td {
 	border-width: 1px;
 	border-collapse: collapse;
 }
+
+table {
+	width:95%;
+}
+
+.sample {
+	width:600px;
+	overflow-x:auto;
+	overflow-y:auto;
+	word-break: normal;
+	word-wrap: normal;
+	white-space: pre;
+}
