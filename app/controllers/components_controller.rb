@@ -86,6 +86,11 @@ class ComponentsController < ApplicationController
 
   def test
     @component = Component.find(params[:id])
-    result = @component.test    
+    @result = @component.test
+
+    respond_to do |format|
+      format.html { render :layout => false }
+    end
   end
+
 end

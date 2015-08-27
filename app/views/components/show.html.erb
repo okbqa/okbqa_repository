@@ -20,7 +20,11 @@
 
 <tr>
   <th>Web service URL:</th>
-  <td><%= @component.ws_url %></td>
+  <td>
+    <%= @component.ws_url %>
+    <!-- <%= link_to 'Test', test_component_path, target: "_blank", :class=>"button" %> -->
+    <%= link_to 'Test', test_component_path, :class=>"button", :onclick=>"window.open(this.href,'create_company', 'height=600, width=600');return false;" %>
+  </td>
 </tr>
 
 <tr>

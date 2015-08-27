@@ -12,15 +12,12 @@ class Component < ActiveRecord::Base
 
   def test
   	begin
-	    RestClient.post ws_url, sample_input.to_json, :content_type => :json, :accept => :json
+	    response = RestClient.post ws_url, sample_input, :content_type => :json, :accept => :json
   	  raise IOError, "Bad gateway" unless response.code == 200
 	    result = JSON.parse response, :symbolize_names => true
-
-	    true
+	    pretty = JSON.pretty_generate result
 	  rescue => error
-	  	puts error.message
-	  	puts "-----"
-	  	false
+	  	error.message
 	  end
 	end
 

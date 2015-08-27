@@ -2,8 +2,11 @@ OkbqaRepository::Application.routes.draw do
   # get "users/index"
   # get "users/show"
 
-  resources :components
-  # resources :users
+  resources :components do
+    member do
+      get 'test'
+    end
+  end
 
   devise_for :users
 
