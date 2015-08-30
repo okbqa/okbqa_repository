@@ -89,7 +89,7 @@ class ComponentsController < ApplicationController
     @result = @component.test
 
     respond_to do |format|
-      format.html { render :layout => false }
+      format.html { render :layout => 'popup' }
     end
   end
 

@@ -11,14 +11,28 @@ class Component < ActiveRecord::Base
   end
 
   def test
-  	begin
-	    response = RestClient.post ws_url, sample_input, :content_type => :json, :accept => :json
-  	  raise IOError, "Bad gateway" unless response.code == 200
-	    result = JSON.parse response, :symbolize_names => true
-	    pretty = JSON.pretty_generate result
-	  rescue => error
-	  	error.message
-	  end
-	end
+    begin
+      cmd = sample_curl_command.sub('_sample_input_', %Q|#{sample_input}|)
+      response = `#{cmd}`
+      result = begin
+        JSON.pretty_generate JSON.parse(response)
+      rescue
+        response
+      end
+    rescue => error
+      error.message
+    end
+  end
+
+ #  def test
+ #  	begin
+	#     response = RestClient.post ws_url, sample_input, :content_type => :json, :accept => :json
+ #  	  raise IOError, "Bad gateway" unless response.code == 200
+	#     result = JSON.parse response, :symbolize_names => true
+	#     pretty = JSON.pretty_generate result
+	#   rescue => error
+	#   	error.message
+	#   end
+	# end
 
 end

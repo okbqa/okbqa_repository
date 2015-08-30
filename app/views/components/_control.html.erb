@@ -1,0 +1,7 @@
+<div class="control">
+<% if user_signed_in? && @component.editable?(current_user) -%>
+  <span class='button'><%= link_to 'Edit', edit_component_path(@component) %></span>
+  <span class='button'><%= link_to 'Destroy', @component, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+<% end %>
+<span class='button'><%= link_to 'List', components_path %></span>
+</div>

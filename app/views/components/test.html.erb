@@ -1,6 +1,14 @@
-<h2><%= @component.title %> Test</h2>
-
 <p id="notice"><%= notice %></p>
+<h1><%= @component.title %> Test</h1>
+
+<div class='note'>
+This page shows the result of the sample cURL command.<br/>
+When there is the placeholder expression, <i>_sample_input_</i>,
+in the cURL command,
+it will be replaced by the value of the field, <i>Sample input</i>.
+</div>
+
+<h2>Result</h2>
 <pre>
 <%= @result %>
 </pre>

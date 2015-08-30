@@ -16,12 +16,7 @@
     <th><%= f.label :title %></th>
     <td><%= f.text_field :title %></td>
   </tr>
-<!-- 
-  <tr>
-    <th><%= f.label :category %></th>
-    <td><%= f.text_field :category %></td>
-  </tr>
- -->  
+
   <tr>
     <th>Category</th>
     <td>
@@ -40,7 +35,7 @@
       <%= f.radio_button(:category, 'Semantic computing') %>
       <%= f.label :semantic_computing %><br/>
       <%= f.radio_button(:category, 'Other') %>
-      <%= f.label :Other %><br/><br/>
+      <%= f.label :Other %>
     </td>
   </tr>
 
@@ -48,22 +43,12 @@
     <th><%= f.label :description %></th>
     <td><%= f.text_area :description, cols:80 %></td>
   </tr>
+
   <tr>
-    <th><%= f.label :sample_input %></th>
-    <td><%= f.text_area :sample_input, cols:80 %></td>
+    <th><%= f.label :user %></th>
+    <td><%= current_user.email %></td>
   </tr>
-  <tr>
-    <th><%= f.label :sample_output %></th>
-    <td><%= f.text_area :sample_output, cols:80 %></td>
-  </tr>
-  <tr>
-    <th><%= f.label 'Sample cURL command' %></th>
-    <td><%= f.text_field :sample_curl_command %></td>
-  </tr>
-  <tr>
-    <th><%= f.label 'Web service URL' %></th>
-    <td><%= f.text_field :ws_url %></td>
-  </tr>
+
   <tr>
     <th><%= f.label 'Source-code URL' %></th>
     <td><%= f.text_field :sc_url %></td>
@@ -73,8 +58,20 @@
     <td><%= f.text_field :home_url %></td>
   </tr>
   <tr>
-    <th><%= f.label :user %></th>
-    <td><%= current_user.email %></td>
+    <th><%= f.label 'Web service URL' %></th>
+    <td><%= f.text_field :ws_url %></td>
+  </tr>
+  <tr>
+    <th><%= f.label 'Sample cURL command' %></th>
+    <td><%= f.text_field :sample_curl_command %></td>
+  </tr>
+  <tr>
+    <th><%= f.label :sample_input %></th>
+    <td><%= f.text_area :sample_input %></td>
+  </tr>
+  <tr>
+    <th><%= f.label :sample_output %></th>
+    <td><%= f.text_area :sample_output %></td>
   </tr>
   </table>
   <div class="actions">

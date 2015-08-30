@@ -1,5 +1,8 @@
 <h2>List</h2>
 
+<div class='control'>
+<span class='button'><%= link_to 'New Component', new_component_path %></span>
+</div>
 <table>
   <tr>
     <th style="width:10em">Title</th>
@@ -14,16 +17,10 @@
     <td><%= component.category %></td>
     <td><%= component.description.html_safe %></td>
     <td><%= component.user.email %></td>
-    <% if user_signed_in? && component.editable?(current_user) -%>
-      <td>
-          <span class='button'><%= link_to 'Edit', edit_component_path(component) %></span>
-          <span class='button'><%= link_to 'Destroy', component, method: :delete, data: { confirm: 'Are you sure?' } %></span>
-      </td>
-    <% end %>
   </tr>
 <% end %>
 </table>
 
-<br />
-
-<%= link_to 'New Component', new_component_path %>
+<div class='control'>
+<span class='button'><%= link_to 'New Component', new_component_path %></span>
+</div>

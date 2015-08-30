@@ -7,7 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<h1>OKBQA repository of modules</h1>
+<div class="frame">
+<div id="title">OKBQA repository of modules</div>
 
 <div id="account" class="menu">
 	<ul>
@@ -15,11 +16,12 @@
 		<li><%= render 'devise/menu/login_items' %></li>
 	</ul>
 </div>
+</div>
 
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
-
+<div class="content">
 <%= yield %>
-
+</div>
 </body>
 </html>

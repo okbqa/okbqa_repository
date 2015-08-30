@@ -1,61 +1,69 @@
-<h2><%= @component.title %></h2>
+<h1><%= @component.title %></h1>
 
-<p id="notice"><%= notice %></p>
-
-
-<%= link_to 'Edit', edit_component_path(@component) %> |
-<%= link_to 'List', components_path %>
-
-
+<%= render partial: 'control' %>
 <table>
 <tr>
-  <th>Category:</th>
+  <th>Category</th>
   <td><%= @component.category %></td>
 </tr>
 
 <tr>
-  <th>Description:</th>
+  <th>Description</th>
   <td><%= @component.description.html_safe %></td>
 </tr>
 
 <tr>
-  <th>Maintainer:</th>
+  <th>Maintainer</th>
   <td><%= @component.user.email %></td>
 </tr>
 
+<tr>
+  <th>Source-code URL</th>
+  <td><a href="<%= @component.sc_url %>"><%= @component.sc_url %></a></td>
+</tr>
 
 <tr>
-  <th>Web service URL:</th>
+  <th>Homepage URL</th>
+  <td><a href="<%= @component.home_url %>"><%= @component.home_url %></a></td>
+</tr>
+
+<tr>
+  <th>Web service URL</th>
   <td>
     <%= @component.ws_url %>
-    <!-- <%= link_to 'Test', test_component_path, target: "_blank", :class=>"button" %> -->
+  </td>
+</tr>
+
+<tr>
+  <th>Sample cURL command</th>
+  <td>
+    <%= @component.sample_curl_command %>
     <%= link_to 'Test', test_component_path, :class=>"button", :onclick=>"window.open(this.href,'create_company', 'height=600, width=600');return false;" %>
   </td>
 </tr>
 
 <tr>
-  <th>Source-code URL:</th>
-  <td><a href="<%= @component.sc_url %>"><%= @component.sc_url %></a></td>
+  <th>Sample input</th>
+  <td><textarea class="sample"><%=
+    begin
+      JSON.pretty_generate JSON.parse(@component.sample_input)
+    rescue
+      @component.sample_input
+    end
+  %></textarea></td>
 </tr>
 
 <tr>
-  <th>Homepage URL:</th>
-  <td><a href="<%= @component.home_url %>"><%= @component.home_url %></a></td>
-</tr>
-
-<tr>
-  <th>Sample input:</th>
-  <td><pre class="sample"><%= @component.sample_input %></pre></td>
-</tr>
-
-<tr>
-  <th>Sample output:</th>
-  <td><pre class="sample"><%= @component.sample_output %></pre></td>
-</tr>
-
-<tr>
-  <th>Sample cURL command:</th>
-  <td><%= @component.sample_curl_command %></td>
+  <th>Sample output</th>
+  <td><textarea class="sample"><%=
+    begin
+      JSON.pretty_generate JSON.parse(@component.sample_output)
+    rescue
+      @component.sample_output
+    end
+  %></textarea></td>
 </tr>
 
 </table>
+
+<%= render partial: 'control' %>
