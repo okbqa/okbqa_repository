@@ -20,8 +20,10 @@ class Component < ActiveRecord::Base
         response
       end
     rescue => error
-      error.message
+      result = error.message
     end
+
+    [cmd, result]
   end
 
  #  def test
