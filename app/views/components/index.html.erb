@@ -15,7 +15,7 @@
   <tr>
     <td><%= link_to component.title, component %></td>
     <td><%= component.category %></td>
-    <td><%= component.description.html_safe %></td>
+    <td><%= strip_tags(component.description) %></td>
     <td><%= component.user.email %></td>
   </tr>
 <% end %>
