@@ -14,7 +14,7 @@
 <% @components.each do |component| %>
   <tr>
     <td><%= link_to component.title, component %></td>
-    <td><%= component.category %></td>
+    <td><%= link_to_category(component.category).html_safe %></td>
     <td><%= strip_tags(component.description) %></td>
     <td><%= component.user.email %></td>
   </tr>

@@ -4,7 +4,7 @@
 <table>
 <tr>
   <th style="width:10em">Category</th>
-  <td><%= @component.category %></td>
+  <td><%= link_to_category(@component.category).html_safe %></td>
 </tr>
 
 <tr>
