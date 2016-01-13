@@ -12,7 +12,10 @@ class Component < ActiveRecord::Base
 
   def test
     begin
-      cmd = sample_curl_command.sub('_sample_input_', %Q|#{sample_input}|)
+      cmd = sample_curl_command
+            .sub('_sample_input_', %Q|#{sample_input}|)
+            .sub('_ws_url_', %Q|#{ws_url}|)
+
       response = `#{cmd}`
       result = begin
         JSON.pretty_generate JSON.parse(response)
@@ -23,7 +26,9 @@ class Component < ActiveRecord::Base
       result = error.message
     end
 
-    [cmd, result]
+    diff = JsonCompare.get_diff(sample_output, result)
+
+    [cmd, result, diff]
   end
 
  #  def test

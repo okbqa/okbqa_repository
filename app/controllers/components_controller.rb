@@ -86,7 +86,7 @@ class ComponentsController < ApplicationController
 
   def test
     @component = Component.find(params[:id])
-    @command, @result = @component.test
+    @command, @result, @diff = @component.test
 
     respond_to do |format|
       format.html { render :layout => 'popup' }
