@@ -11,11 +11,18 @@ body {
 
 .frame {
   margin: 0;
-  padding: 4px;
+  padding: 5px;
   border-style: solid;
   border-color: #8888dd;
   background-color: #aaaaff;
   color: #222288;
+  a {
+    color: #101010;
+    text-decoration: none;
+  }
+  a:visited {
+    color: #101010;
+  }
 }
 
 #title {
@@ -59,6 +66,7 @@ p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+  height: 18px;
 }
 
 pre {

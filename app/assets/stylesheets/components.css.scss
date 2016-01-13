@@ -2,6 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+table {
+	table-layout: fixed;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 table, th, td {
 	border-style: solid;
 	border-color: #aaaaff;
@@ -10,12 +17,14 @@ table, th, td {
 	padding:4px;
 }
 
-th {
-	background-color: #eeeeff;
+td {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
-table {
-	width:100%;
+th {
+	background-color: #eeeeff;
 }
 
 td input[type=text], textarea {
