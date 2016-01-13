@@ -20,22 +20,18 @@
   <tr>
     <th>Category</th>
     <td>
-      <%= f.radio_button(:category, 'Template generation') %>
-      <%= f.label :template_generation %><br/>
-      <%= f.radio_button(:category, 'Disambiguation') %>
-      <%= f.label :disambiguation %><br/>
-      <%= f.radio_button(:category, 'Query generation') %>
-      <%= f.label :query_generation %><br/>
-      <%= f.radio_button(:category, 'Answer generation') %>
-      <%= f.label :answer_generation %><br/>
-      <%= f.radio_button(:category, 'Rendering') %>
-      <%= f.label :rendering %><br/>
-      <%= f.radio_button(:category, 'Parser') %>
-      <%= f.label :parser %><br/>
-      <%= f.radio_button(:category, 'Semantic computing') %>
-      <%= f.label :semantic_computing %><br/>
-      <%= f.radio_button(:category, 'Other') %>
-      <%= f.label :Other %>
+      <%= f.select(:category, options_for_select([
+        ['Template generation'],
+        ['Disambiguation'],
+        ['Query generation'],
+        ['Answer generation'],
+        ['Rendering'],
+        ['Parser'],
+        ['Semantic computing'],
+        ['Controller'],
+        ['Evaluator'],
+        ['Other'],
+      ])) %>
     </td>
   </tr>
 
