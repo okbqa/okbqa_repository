@@ -1,7 +1,7 @@
 <h1><%= @component.title %></h1>
 
 <%= render partial: 'control' %>
-<table>
+<table class="profile">
 <tr>
   <th style="width:10em">Category</th>
   <td><%= link_to_category(@component.category).html_safe %></td>
