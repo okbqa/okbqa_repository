@@ -9,6 +9,7 @@ gem 'thin'
 gem 'sqlite3'
 gem 'devise'
 gem 'rest-client'
+gem 'wice_grid', '~> 3.5'
 
 # Gems used only for assets and not required
 # in production environments by default.
