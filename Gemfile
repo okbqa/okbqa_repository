@@ -10,6 +10,7 @@ gem 'sqlite3'
 gem 'devise'
 gem 'rest-client'
 gem 'wice_grid', '~> 3.5'
+gem 'font-awesome-sass',  '~> 4.3'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -24,6 +25,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

@@ -1,27 +1,31 @@
-<h2>List</h2>
+<h1>Components</h1>
 
 <div class='control'>
-<span class='button'><%= link_to 'New Component', new_component_path %></span>
+<span class='button'><%= link_to 'Create', new_component_path %></span>
 </div>
 
-<table class="list">
-  <tr>
-    <th style="width:10em">Title</th>
-    <th style="width:10em">Category</th>
-    <th>Description</th>
-    <th style="width:15em">Maintainer</th>
-  </tr>
+<%=
+  grid(@components_grid) do |g|
 
-<% @components.each do |component| %>
-  <tr>
-    <td><%= link_to component.title, component %></td>
-    <td><%= link_to_category(component.category).html_safe %></td>
-    <td><%= strip_tags(component.description) %></td>
-    <td><%= component.user.email %></td>
-  </tr>
-<% end %>
-</table>
+    g.column name: 'Title', attribute: 'title', filter: false do |component|
+      [link_to(component.title, component), {style: 'width:10em; text-align:center'}]
+    end
+
+    g.column name: 'Category', attribute: 'category', custom_filter: :auto do |component|
+      [link_to_category(component.category).html_safe, {style: 'width:14em; text-align:center'}]
+    end
+
+    g.column name: 'Description', attribute: 'description' do |component|
+      [strip_tags(component.description), {style: 'width:20em; max-width: 20em; white-space:nowrap; overflow:hidden; text-overflow:ellipsis'}]
+    end
+
+    g.column name: 'Maintainer' do |component|
+      [component.user.email, {style: 'width:15em; text-align:center'}]
+    end
+
+  end
+-%>
 
 <div class='control'>
-<span class='button'><%= link_to 'New Component', new_component_path %></span>
+<span class='button'><%= link_to 'Create', new_component_path %></span>
 </div>

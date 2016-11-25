@@ -12,6 +12,10 @@
  *= require_tree .
  */
 
+@import "wice_grid";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
 .button {
     -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
     -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
