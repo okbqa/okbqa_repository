@@ -5,7 +5,7 @@
 <%=
   grid(@components_grid) do |g|
 
-    g.column name: 'Title', attribute: 'title', filter: false do |component|
+    g.column name: 'Title', attribute: 'title' do |component|
       [link_to(component.title, component), {style: 'width:10em; text-align:center'}]
     end
 
@@ -17,7 +17,7 @@
       [strip_tags(component.description), {style: 'width:20em; max-width: 20em; white-space:nowrap; overflow:hidden; text-overflow:ellipsis'}]
     end
 
-    g.column name: 'Maintainer' do |component|
+    g.column name: 'Maintainer', attribute: 'email', assoc: :user do |component|
       [component.user.email, {style: 'width:15em; text-align:center'}]
     end
 

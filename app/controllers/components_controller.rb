@@ -5,7 +5,7 @@ class ComponentsController < ApplicationController
   # GET /components.json
   def index
     @components = Component.all
-    @components_grid = initialize_grid(Component)
+    @components_grid = initialize_grid(Component, include: :user)
 
     respond_to do |format|
       format.html # index.html.erb
