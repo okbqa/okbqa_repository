@@ -5,19 +5,23 @@
 <%=
   grid(@components_grid) do |g|
 
-    g.column name: 'Title', attribute: 'title' do |component|
+    g.column name: 'Title', attribute: 'title', class: 'column-config-title' do |component|
       [link_to(component.title, component), {style: 'width:10em; text-align:center'}]
     end
 
-    g.column name: 'Category', attribute: 'category', custom_filter: :auto do |component|
+    g.column name: 'Category', attribute: 'category', custom_filter: :auto, class: 'column-config-category' do |component|
       [link_to_category(component.category).html_safe, {style: 'width:14em; text-align:center'}]
     end
 
     g.column name: 'Description', attribute: 'description' do |component|
-      [strip_tags(component.description), {style: 'width:20em; max-width: 20em; white-space:nowrap; overflow:hidden; text-overflow:ellipsis'}]
+      [strip_tags(component.description), {style: 'white-space:nowrap; overflow:hidden; text-overflow:ellipsis'}]
     end
 
-    g.column name: 'Maintainer', attribute: 'email', assoc: :user do |component|
+    g.column name: 'Created at', attribute: 'created_at', class: 'column-config-created-at' do |component|
+      [component.created_at, {style: 'width:15em; text-align:center'}]
+    end
+
+    g.column name: 'Maintainer', attribute: 'email', assoc: :user, class: 'column-config-maintainer' do |component|
       [component.user.email, {style: 'width:15em; text-align:center'}]
     end
 

@@ -4,6 +4,26 @@ table.table-striped tr.even {
   background-color: #eee;
 }
 
+.wice-grid-container {
+	width: 100%;
+	table {
+		table-layout: fixed;
+		width:100%;
+
+		.column-config-title {width:10em; text-align:center}
+		.column-config-category {width:14em; text-align:center}
+		.column-config-created-at {width:14em; text-align:center}
+		.column-config-maintainer {width:12em; text-align:center}
+	}
+}
+
+.wice-grid-title-row {
+  th:last-of-type {
+    width: 1.5em;
+  }
+}
+
+
 .pagination {
 	margin: 0;
 	padding: 0;
